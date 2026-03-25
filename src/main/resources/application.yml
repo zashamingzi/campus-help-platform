@@ -1,0 +1,71 @@
+# 服务器配置
+server:
+  port: 8080
+  servlet:
+    context-path: /campus-help
+    # 编码配置（解决中文乱码）
+    encoding:
+      charset: UTF-8  # 这个是编码
+      enabled: true  # 编码强制转换
+      force: true  # 强制请求都用这个
+    # 文件上传配置
+    multipart:
+      max-file-size: 10MB  # 单个文件
+      max-request-size: 50MB  # 所有文件
+  # Tomcat容器配置
+  tomcat:
+    connection-timeout: 30000ms  # 链接时间(超过30秒清除)
+    threads:
+      max: 200  # 最大线程数
+      min-spare: 10  # 核心线程数(留几个空)
+
+
+# 数据库配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 这里改了时间和编码(固定配置)
+    url: jdbc:mysql://localhost:3306/school_help?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+
+# MyBatis配置(这里得平级,不然不报错但会失效)
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true  # 下划线转驼峰命名
+
+# 自己配置
+custom:
+  #  文件上传配置
+  upload:
+    path: ${user.dir}/upload/  # 本地上传路径
+    allowed-types: jpg,png,jpeg,doc,pdf  # 文件类型
+    max-size: 10MB  # 单个文件大小
+
+  #  JWT认证配置
+  jwt:
+    secret: campus-help-2026-secret-key # JWT签名密钥
+    expire: 86400000  # Token过期时间24h
+
+  #  Redis缓存配置
+  redis:
+    prefix: "campus:help:"  # 统一前缀
+    task:
+      expire: 3600  # 任务缓存过期时间：1小时
+    user:
+      expire: 1800  # 用户缓存过期时间：30分钟
+
+# Swagger接口文档配置
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+
+  #  Swagger-UI可视化配置
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui/index.html  # 访问地址：http://localhost:8080/campus-help/swagger-ui/index.html
+    operationsSorter: method  # 接口按HTTP方法（GET/POST/PUT/DELETE）排序
+    tagsSorter: alpha  # 标签按字母序排序
+    doc-expansion: list   # 文档展开默认所有接口列表
+    persistAuthorization: true  # 刷新页面后保留JWT Token:无需重复输入
