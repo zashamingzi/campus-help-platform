@@ -13,8 +13,8 @@ public class CampusHelpApplication {
     public static void main(String[] args) {
         SpringApplication.run(CampusHelpApplication.class, args);
         System.out.println("=====================================");
-        System.out.println("✅ 校园互助平台（SpringBoot 3.x）启动成功");
-        System.out.println("📌 接口前缀：http://localhost:8080/campus-help");
+        System.out.println(" 校园互助平台启动成功");
+        System.out.println(" 接口前缀：http://localhost:8080/campus-help");
         System.out.println("=====================================");
     }
 } 

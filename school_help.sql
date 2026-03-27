@@ -8,7 +8,7 @@ USE school_help;
 -- ====================== 用户表 ======================
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '用户主键ID',
+  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '用户主键ID',q
   `username` varchar(50) NOT NULL COMMENT '用户名（唯一）',
   `password` varchar(255) NOT NULL COMMENT '密码（BCrypt加密）',
   `nickname` varchar(50) DEFAULT '' COMMENT '昵称',
