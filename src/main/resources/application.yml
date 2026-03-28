@@ -43,9 +43,9 @@ custom:
     max-size: 10MB  # 单个文件大小
 
   #  JWT认证配置
-  jwt:
-    secret: campus-help-2026-secret-key # JWT签名密钥
-    expire: 86400000  # Token过期时间24h
+    jwt:
+      secret: CampusHelp2026StudentTaskManageSystem@SpringBoot
+      expire: 86400000
 
   #  Redis缓存配置
   redis:
