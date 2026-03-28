@@ -29,7 +29,7 @@ spring:
     username: root
     password: 123456
 
-# MyBatis配置(这里得平级,不然不报错但会失效)
+# MyBatis配置
 mybatis:
   configuration:
     map-underscore-to-camel-case: true  # 下划线转驼峰命名
