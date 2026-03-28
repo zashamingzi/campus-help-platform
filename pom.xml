@@ -134,7 +134,6 @@
 
     <!-- 构建配置：打包/资源过滤 -->
     <build>
-        <!-- 资源过滤：确保yml/properties文件中的占位符（如${user.dir}）正常解析 -->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -153,7 +152,7 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
-                    <!-- 就这个要改,对应启动类 -->
+                    <!-- 启动类 -->
                     <mainClass>com.deepcode.campushelp.CampusHelpApplication</mainClass>
                 </configuration>
                 <executions>
