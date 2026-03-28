@@ -152,7 +152,7 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
-                    <!-- 就这个要改,对应启动类 -->
+                    <!-- 启动类 -->
                     <mainClass>com.deepcode.campushelp.CampusHelpApplication</mainClass>
                 </configuration>
                 <executions>
