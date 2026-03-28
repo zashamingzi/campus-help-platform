@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    @Value("${custom.upload.path}") //从yml读取//
+    @Value("${custom.upload.path}")
     private String uploadPath;
 
     @Bean
@@ -21,7 +21,6 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Override
-    //放行了注册,登录和验证码部分不用Token//
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(jwtInterceptor())
                 .addPathPatterns("/**")
