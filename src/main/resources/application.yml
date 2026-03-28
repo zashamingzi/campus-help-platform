@@ -42,10 +42,10 @@ custom:
     allowed-types: jpg,png,jpeg,doc,pdf  # 文件类型
     max-size: 10MB  # 单个文件大小
 
-    #  JWT认证配置
-    jwt:
-      secret: CampusHelp2026StudentTaskManageSystem@SpringBoot
-      expire: 86400000
+  jwt:
+    # 你原来的密钥（不报错、能启动）
+    secret: campus-help-2026-secret-key
+    expire: 86400000
 
   #  Redis缓存配置
   redis:
